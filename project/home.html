@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style type="text/css">
+    	* { 
+			padding:0; 
+			margin:0; 
+		} 
+        body {
+            margin: 0px;
+        }
+        .top {
+            position: fixed;
+            background-color: white;
+            top:0;
+            width: 100%;
+            height: 40px;
+            z-index: 3;
+
+        }
+
+        .top a {
+            text-decoration: none;
+            color: #A9A9A9;
+        }
+        .top rightM a:hover {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .rightM {
+            position:absolute;
+            right: 70px;
+            top: 5px;
+        }
+        .leftM {
+        	position: absolute;
+        	top:5px;
+        	left:40px;
+        	padding-right: 20px;
+        	border-right: 1px solid grey;
+        }
+
+        .main {
+            width: 90%;
+            background-color: #FAEEE3;
+            margin:auto;
+            height: 2700px;
+        }
+
+        .top2 {
+            position: fixed;
+            background-color: #eee;
+            top:40px;
+            width: 100%;
+            height: 60px;
+            border-top: 1px solid grey;
+            min-width: 800px;
+            z-index: 3;
+
+        }
+        .top2 a {
+            text-decoration: none;
+            color: #A9A9A9;
+            font-size:130%;
+        }
+
+
+		#nav{ width:700px; height:60px; background-color:#eee; margin:0 auto;text-align: center;}
+		#nav ul{ list-style:none;}
+		#nav ul li{ float:left; line-height:60px; text-align:center; width:160px;}
+		 
+
+		#nav a:hover{ color:black;border-bottom: 1em;}
+		 
+		 
+		 
+		#nav ul li ul li{ float:none;background-color:#eee; margin:0px 0px;text-align: left;width:200px;padding-left: 20px}
+		#nav ul li ul li:hover {
+			background-color: #E7E0DF;
+		} 
+		#nav ul li ul{ display:none;}
+
+		#banner,
+		#banner li{
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
+
+		#banner{
+		    position: absolute;
+
+		}
+
+		#banner li{
+		    float: left;
+		}
+
+		#banner li img{
+		    display: block;
+		}
+
+
+		#container{
+		    position: relative;
+		    margin:20px auto 0;
+            top:90px;
+            z-index: 2;
+		}
+
+
+		#buttons{
+		    position: absolute; 
+		    height: 10px;
+		    width: 100px;
+		    bottom: 20px;  
+		    left: 45%;  
+		    z-index: 100;
+		}
+
+		#buttons span{
+		    cursor: pointer;
+		    float: left;
+		    width: 10px;
+		    height: 10px;
+		    border-radius: 50%; 
+		    background: #333;
+		    margin-right: 5px;
+		}
+
+		#buttons .on{
+		    background: orangered;
+		}
+
+
+		.arrow{
+		    cursor: pointer;
+		    display: none; 
+		    height: 40px;
+		    line-height: 40px;
+		    text-align: center;
+		    font-size: 36px;
+		    font-weight: bold;
+		    width: 40px;
+		    height: 40px;
+		    position: absolute;
+		    z-index: 200;
+		    top: 250px;
+		    background: RGBA(0,0,0,.3); 
+		    color: #fff;
+		    text-decoration: none;
+		}
+		.arrow:hover {
+			background-color: #A9A9A9;
+		}
+
+		#prev{
+		    left: 20px;
+		}
+
+		#next{
+		    right: 20px;
+		}
+
+		 #container:hover .arrow {
+		     display: block;
+		 }
+
+
+        div.search {padding: 10px 0;position: relative;z-index: 2;}
+ 
+        form {
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+        }
+ 
+        input, button {
+            border: none;
+            outline: none;
+        }
+ 
+        input {
+            width: 150%;
+            height: 42px;
+            padding-left: 13px;
+            padding-right:46px;
+        }
+ 
+        button {
+            height: 42px;
+            width: 42px;
+            cursor: pointer;
+            position: absolute;
+        }
+        .bar3 {top:100px;}
+        .bar3 form {background: #E7E0DF;}
+        .bar3 input, .bar3 button {
+            background: transparent;
+        }
+        .bar3 button {
+            top: 0;
+            right: 0;
+        }
+        .bar3 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+
+        .content {
+            position: relative;
+            top:150px;
+            text-align: center;
+            z-index: 1;
+        }
+        .content footer {
+            text-align: center;
+            background-color: #E8E0D9;
+            padding: 20px 0;
+            margin-top:47px;
+        }
+        .content footer a {
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+<div class="top">
+	<div class="leftM"><strong style="font: italic 1.5em Georgia, serif;"><a href='home.html' style='text-decoration: none;color: black'>F&F Designer Bags</a></strong></div>
+    <div class="rightM">
+    <a href="register.php">Register&nbsp;&nbsp;</a>
+    <a href="login.php">Login&nbsp;&nbsp;</a>
+    <a href="myAccount.php">Account&nbsp;&nbsp;</a>
+    <a href="cart.php">Cart</a>
+    </div> 
+</div>
+<div class="top2">
+	<div id='nav'>
+    <ul>
+        <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"> 
+            <a href="shopping.php?cat=women">WOMEN</a> 
+            <ul> 
+            <li><a href="shopping.php?cat=women&subCat=totes">Totes</a></li> 
+            <li><a href="shopping.php?cat=women&subCat=shoulder">Shoulder Bags</a></li> 
+            <li><a href="shopping.php?cat=women&subCat=boston">Boston Bags</a></li> 
+            <li><a href="shopping.php?cat=women&subCat=clutches">Clutches</a></li> 
+            </ul> 
+        </li>
+        <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"> 
+            <a href="shopping.php?cat=men">MEN</a> 
+            <ul> 
+            <li><a href="shopping.php?cat=men&subCat=briedcase">Briedcases</a></li> 
+            <li><a href="shopping.php?cat=men&subCat=backpack">Backpacks</a></li> 
+            </ul> 
+        </li>
+
+        <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"> 
+            <a href="#">COLLECTIONS</a> 
+            <ul> 
+            <li style="width: 300px"><a href="shopping.php?sp=fall">Fall/Winter 2019-2020</a></li> 
+            <li style="width: 300px"><a href="shopping.php?sp=world">World of F&F</a></li> 
+            </ul> 
+        </li>
+        <li > 
+            <a href="#">ABOUT US</a> 
+        </li>
+    </ul> 
+</div>
+</div>
+</div>
+
+<div class="main">
+<div class="search bar3">
+    <form>
+        <input type="text" placeholder="Search here...">
+        <button type="submit"></button>
+    </form>
+</div>
+
+<div>
+<div id="container">
+    <ul id="banner">
+    	<li><a href="#"><img width="600px" src="img/5.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/1.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/2.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/3.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/4.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/5.jpg"></a></li>
+    	<li><a href="#"><img width="600px" src="img/1.jpg"></a></li>
+    </ul>
+
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a> 
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>  
+</div>
+</div>
+
+<div class="content">
+    <h2 style="padding-bottom: 20px;">Fall/Winter 2019-2020</h2>
+    <img src="#" width="1000px" height="100px">
+    <div>
+        <a href="#"><img src="#" width="500px" height="700px"></a>
+        <a href="#"><img src="#" width="500px" height="700px" style="padding-left: 30px"></a>
+
+    </div>
+    <h2 style="padding: 20px 0;">World of F&F</h2>
+    <img src="#" width="1000px" height="100px">
+    <div>
+        <a href="#"><img src="#" width="500px" height="700px"></a>
+        <a href="#"><img src="#" width="500px" height="700px" style="padding-left: 30px"></a>
+
+    </div>
+<footer>
+    <div id='footer'>
+    <i>Copyright &copy; 2019 F&F Designer Bags<br>
+    <a href="mailto:shihao@feng.com">shihao@feng.com</i></a>
+    </div>
+</footer>
+</div>
+</div>
+</body>
+<script> 
+window.onload = function () {
+        var container =  document.getElementById("container");
+        var banner = document.getElementById("banner");
+        var li = document.querySelectorAll("#banner li");
+        var spanNode = document.querySelectorAll("#buttons span");
+        var img = document.getElementsByTagName("img")[0];
+
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+
+        var index = 1;
+
+        var timer = 0;
+        container.style.width = img.offsetWidth + "px";
+        container.style.height = img.offsetHeight + "px";
+        container .style.overflow = "hidden";
+        banner.style.height = img.offsetHeight + "px";
+        banner.style.width = img.offsetWidth * li.length + "px";
+        banner.style.left = "-600px";
+
+
+        function animate(offset) {
+        banner.style.transition = "0.5s";
+          banner.style.left = -parseInt(offset )* index + "px";
+        }
+
+        next.onclick = function () {
+             if(index == spanNode.length){
+                index = 0;
+
+            }
+            index ++;
+
+            animate(img.offsetWidth)
+            showButton()
+
+        }
+
+        prev.onclick = function () {
+              if(index == 1){
+                index = li.length-1;
+
+            }
+            index--;
+            animate(img.offsetWidth)
+            showButton()
+
+        }
+
+
+    function showButton() {
+
+        for (var i = 0; i< spanNode.length; i++){
+
+            spanNode[i].className = '';
+
+        }
+        console.log("小圆点的index值："+index);
+        spanNode[index-1].className = "on";
+
+    }
+
+
+
+        function play() {
+            timer = setInterval(function () {
+                banner.style.transition = "none";
+            setTimeout(function () {
+
+                 next.onclick();
+
+
+            },200)
+        },1500);
+        }
+
+
+
+        container.onmouseover = function () {
+            clearInterval(timer);
+        }
+        container.onmouseout = function () {
+            play()
+        }
+
+        function ButtonImage() {
+            for (var i = 0; i< spanNode.length; i++){
+                spanNode[i].onclick = function () {
+                    var myIndex = parseInt(this.getAttribute('index'));
+                        index = myIndex;
+                       animate(img.offsetWidth);
+                        showButton();
+                }
+
+            }
+
+        }
+        ButtonImage()
+
+
+
+    }
+
+     function displaySubMenu(li) {
+ 
+            var subMenu = li.getElementsByTagName("ul")[0];
+ 
+            subMenu.style.display = "block";
+        }
+ 
+    function hideSubMenu(li) {
+
+        var subMenu = li.getElementsByTagName("ul")[0];
+
+        subMenu.style.display = "none";
+
+    }
+ </script>
+</body>
+</html>
