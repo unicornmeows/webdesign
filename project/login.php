@@ -1,4 +1,4 @@
-   <style type="text/css">
+  <style type="text/css">
         * { 
             padding:0; 
             margin:0; 
@@ -8,15 +8,13 @@
             background-color: white;
         }
         .top {
-            position: fixed;
+            position: absolute;
             background-color: white;
             top:0;
             width: 100%;
             height: 40px;
             z-index: 3;
-
         }
-
         .top a {
             text-decoration: none;
             color: #A9A9A9;
@@ -29,7 +27,8 @@
         .rightM {
             position:absolute;
             right: 70px;
-            top: 5px;
+            bottom: 5px;
+            font-family: 'Playfair Display SC', serif;
         }
         .leftM {
             position: absolute;
@@ -38,9 +37,8 @@
             padding-right: 20px;
             border-right: 1px solid grey;
         }
-
         .main {
-            width: 90%;
+            width: 100%;
             background-color: #FAEEE3;
             margin:auto;
             height: 600px;
@@ -66,6 +64,7 @@
             z-index: 99999;
             background:#ffffff;
             border: 7px solid #ccc;
+            font-family: 'Playfair Display SC', serif;
         }
         .title-box{
             position: absolute;
@@ -76,26 +75,26 @@
             text-align: center;
             font-size: 28px;
             font-weight: 800;
-            color: #ff5000;
+            color: black;
             line-height: 50px;
+            font-family: 'Playfair Display SC', serif;
         }
         form {
             position: relative;
             top:50px;
             left:150px;
-
         }
         .box{
             width: 420px;
             height: 100px;
-            font-weight: 700;
+            font-weight: 500;
+            font-family: 'Playfair Display SC', serif;
         }
         .input-field{
             display: inline-block;
             position: relative;
             left: 50px;
             top:10px;
-
             /*background: green;*/
         }
         .input-field input {   
@@ -104,13 +103,12 @@
             border: 2px solid #ccc;
             border-radius: 5px;
         }
-
         #submit-button{
             display: inline-block;
             width: 80px;
             height: 40px;
             border-radius: 5px;
-            background: red;
+            background: white;
             position: relative;
             left: 200px;
         }
@@ -120,12 +118,13 @@
             text-align: center;
             z-index: 1;
         }
-        .content footer {
+        footer {
+            position: relative;
             text-align: center;
             background-color: #E8E0D9;
             padding: 20px 0;
         }
-        .content footer a {
+        footer a {
             text-decoration: none;
             color: black;
         }
@@ -136,31 +135,32 @@
         }
         #login a{
             text-decoration: none;
-
         }
  
     </style>
 <?php 
-
 session_start();
 if(isset($_SESSION['user'])) {
-    echo '<script>alert("You have loggin in");';
+    echo '<script>alert("You have logged in");';
     echo 'location.href="home.php"';
     echo '</script>';
-
 }
 ?>
-<body style="background: white;">
+<header style="background: white;">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
 <div class="top" style="border-bottom: 1px solid grey">
-    <div class="leftM"><strong style="font: italic 1.5em Georgia, serif;"><a href='home.php' style='text-decoration: none;color: black'>F&F Designer Bags</a></strong></div>
+    <div class="leftM">
+        <a href='home.php'><img height="30px" src="logo.jpg"></a>
+    </div>
     <div class="rightM">
     <a href="register.php">Register&nbsp;&nbsp;</a>
     <a href="login.php">Login&nbsp;&nbsp;</a>
-    <a href="myAccount.php">Account&nbsp;&nbsp;</a>
     <a href="cart.php">Cart</a>
     </div> 
 </div>
+</header>
 
+<body>
 <div class="main">
 <div class="container">
     <div class="register-box">
@@ -170,9 +170,9 @@ if(isset($_SESSION['user'])) {
         <form action="doLogin.php" method="post" onsubmit="return check()">
             <div class="box">
                 <span style="color: red;">*</span>
-                <label for="username">Username</label><br>
+                <label for="email">Email</label><br>
                 <div class="input-field">
-                    <input type="text" id="username" name="username" placeholder=" Please enter your username" required />
+                    <input type="email" id="email" name="email" placeholder=" Please enter your email" required />
                 </div>
             </div>
 
@@ -191,25 +191,23 @@ if(isset($_SESSION['user'])) {
                     echo $_SERVER['HTTP_REFERER'];
                 }
                 ?> >
-                <input id = "submit-button" type="submit" value="login">
+                <input id = "submit-button" type="submit" value="Login">
             
 
         </form>
         <div id="login"><a href="register.php">Don't have account? Register</a></div>
     </div>
 </div>
+</div>
+</body>
 
-<div class="content">
 <footer>
     <div id='footer'>
     <i>Copyright &copy; 2019 F&F Designer Bags<br>
-    <a href="mailto:shihao@feng.com">shihao@feng.com</i></a>
+    <a href="mailto:shihao@feng.com">shihao@feng.com</a>
+    <a href="mailto:fannyee@liow.com">fannyee@liow.com</a></i>
     </div>
 </footer>
-</div>
-</div>
 
 <script type="text/javascript">
-
 </script>
-</body>
